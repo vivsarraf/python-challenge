@@ -19,7 +19,7 @@ profit_loss_changes = []
 total_months = 0
 net_total_profit_loss = 0
 last_month_profit_loss = 0
-current_month_profit_loss = 0
+currentmonth_profit_loss = 0
 profit_loss_change = 0
 
 # Change directory to the directory of current python script
@@ -46,18 +46,18 @@ with open(budget_data_csv_path, newline="") as csvfile:
         total_months += 1
 
         # Net total amount of "Profit/Losses" over the entire period
-        current_month_profit_loss = int(row[1])
-        net_total_profit_loss += current_month_profit_loss
+        currentmonth_profit_loss = int(row[1])
+        net_total_profit_loss += currentmonth_profit_loss
 
         if (total_months == 1):
             # Make the value of previous month to be equal to current month
-            last_month_profit_loss_month_profit_loss = current_month_profit_loss
+            last_month_profit_loss_month_profit_loss = currentmonth_profit_loss
             continue
 
         else:
 
             # Compute change in profit loss 
-            profit_loss_change = current_month_profit_loss - last_month_profit_loss_month_profit_loss
+            profit_loss_change = currentmonth_profit_loss - last_month_profit_loss_month_profit_loss
 
             # Append each month to the months[]
             months.append(row[0])
@@ -66,7 +66,7 @@ with open(budget_data_csv_path, newline="") as csvfile:
             profit_loss_changes.append(profit_loss_change)
 
             # Make the current_month_loss to be previous_month_profit_loss for the next loop
-            last_month_profit_loss_month_profit_loss = current_month_profit_loss
+            last_month_profit_loss_month_profit_loss = currentmonth_profit_loss
 
     #sum and average of the changes in "Profit/Losses" over the entire period
     sum_profit_loss = sum(profit_loss_changes)
