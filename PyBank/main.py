@@ -17,7 +17,7 @@ months = []
 profit_loss_changes = []
 
 total_months = 0
-net_profit_loss = 0
+net_total_profit_loss = 0
 previous_month_profit_loss = 0
 current_month_profit_loss = 0
 profit_loss_change = 0
@@ -47,7 +47,7 @@ with open(budget_data_csv_path, newline="") as csvfile:
 
         # Net total amount of "Profit/Losses" over the entire period
         current_month_profit_loss = int(row[1])
-        net_profit_loss += current_month_profit_loss
+        net_total_profit_loss += current_month_profit_loss
 
         if (total_months == 1):
             # Make the value of previous month to be equal to current month
@@ -88,7 +88,7 @@ with open(budget_data_csv_path, newline="") as csvfile:
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months:  {total_months}")
-print(f"Total:  ${net_profit_loss}")
+print(f"Total:  ${net_total_profit_loss}")
 print(f"Average Change:  ${average_profit_loss}")
 print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
 print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
@@ -99,7 +99,7 @@ with open(budget_file, "w") as outfile:
     outfile.write("Financial Analysis\n")
     outfile.write("----------------------------\n")
     outfile.write(f"Total Months:  {total_months}\n")
-    outfile.write(f"Total:  ${net_profit_loss}\n")
+    outfile.write(f"Total:  ${net_total_profit_loss}\n")
     outfile.write(f"Average Change:  ${average_profit_loss}\n")
     outfile.write(f"Greatest Increase in Profits:  {best_month} (${highest_change})\n")
     outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})\n")
