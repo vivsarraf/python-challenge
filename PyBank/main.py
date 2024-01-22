@@ -92,6 +92,7 @@ print(f"Total:  ${net_total_profit_loss}")
 print(f"Average Change:  ${average_change}")
 print(f"Greatest Increase in Profits:  {greatest_month} (${high_change})")
 print(f"Greatest Decrease in Losses:  {lowest_month} (${low_change})")
+
 # -->>  Export a text file with the results
 budget_file = os.path.join("analysis", "Financial_Analysis.txt")
 with open(budget_file, "w") as outfile:
