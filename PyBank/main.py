@@ -12,7 +12,7 @@
 import os
 import csv
 
-# Declare PyBank's variables
+# Declare the variables
 months = []
 total_profit_loss = []
 
@@ -51,13 +51,13 @@ with open(budget_data_csv_path, newline="") as csvfile:
 
         if (total_months == 1):
             # Make the value of previous month to be equal to current month
-            last_month_profit_loss_month_profit_loss = currentmonth_profit_loss
+            last_month_profit_loss = currentmonth_profit_loss
             continue
 
         else:
 
             # Compute change in profit loss 
-            profit_loss_change = currentmonth_profit_loss - last_month_profit_loss_month_profit_loss
+            profit_loss_change = currentmonth_profit_loss - last_month_profit_loss
 
             # Append each month to the months[]
             months.append(row[0])
@@ -66,23 +66,23 @@ with open(budget_data_csv_path, newline="") as csvfile:
             total_profit_loss.append(profit_loss_change)
 
             # Make the current_month_loss to be previous_month_profit_loss for the next loop
-            last_month_profit_loss_month_profit_loss = currentmonth_profit_loss
+            last_month_profit_loss = currentmonth_profit_loss
 
     #sum and average of the changes in "Profit/Losses" over the entire period
     sum_profit_loss = sum(total_profit_loss)
     average_change = round(sum_profit_loss/(total_months - 1), 2)
 
     # highest and lowest changes in "Profit/Losses" over the entire period
-    highest_change = max(total_profit_loss)
-    lowest_change = min(total_profit_loss)
+    high_change = max(total_profit_loss)
+    low_change = min(total_profit_loss)
 
     # Locate the index value of highest and lowest changes in "Profit/Losses" over the entire period
-    highest_month_index = total_profit_loss.index(highest_change)
-    lowest_month_index = total_profit_loss.index(lowest_change)
+    greatest_month_index = total_profit_loss.index(high_change)
+    lowest_month_index = total_profit_loss.index(low_change)
 
     # Assign best and worst month
-    best_month = months[highest_month_index]
-    worst_month = months[lowest_month_index]
+    greatest_month = months[greatest_month_index]
+    lowest_month = months[lowest_month_index]
 
 # -->>  Print the analysis to the terminal
 print("Financial Analysis")
@@ -90,8 +90,8 @@ print("----------------------------")
 print(f"Total Months:  {total_months}")
 print(f"Total:  ${net_total_profit_loss}")
 print(f"Average Change:  ${average_change}")
-print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
-print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
+print(f"Greatest Increase in Profits:  {greatest_month} (${high_change})")
+print(f"Greatest Decrease in Losses:  {lowest_month} (${low_change})")
 # -->>  Export a text file with the results
 budget_file = os.path.join("analysis", "Financial_Analysis.txt")
 with open(budget_file, "w") as outfile:
@@ -101,6 +101,6 @@ with open(budget_file, "w") as outfile:
     outfile.write(f"Total Months:  {total_months}\n")
     outfile.write(f"Total:  ${net_total_profit_loss}\n")
     outfile.write(f"Average Change:  ${average_change}\n")
-    outfile.write(f"Greatest Increase in Profits:  {best_month} (${highest_change})\n")
-    outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})\n")
+    outfile.write(f"Greatest Increase in Profits:  {greatest_month} (${high_change})\n")
+    outfile.write(f"Greatest Decrease in Losses:  {lowest_month} (${low_change})\n")
 
