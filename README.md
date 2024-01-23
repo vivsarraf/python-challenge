@@ -1,30 +1,44 @@
 # python-challenge
 
 ## Background
-In this Challenge, we will use a Python script to analyze the financial records of a company. 
+PyBank: Creating a Python script to analyze the financial records of a company
+PyPoll: Creating a Python script to Analyze the election result of a small rural town and modernize its vote-counting process.
 
+# PyBank
 ![revenue-per-lead](https://github.com/vivsarraf/python-challenge/assets/135401654/91614b37-8881-4072-a673-c8cca436ceec)
 
-
 ## Instructions
+
 Create a python script to create a Python script that analyzes the records to calculate each of the following values:
 
-The total number of months included in the dataset
+* The total number of months included in the dataset
 
-The net total amount of "Profit/Losses" over the entire period
+* The net total amount of "Profit/Losses" over the entire period
 
-The changes in "Profit/Losses" over the entire period, and then the average of those changes
+* The changes in "Profit/Losses" over the entire period, and then the average of those changes
 
-The greatest increase in profits (date and amount) over the entire period
+* The greatest increase in profits (date and amount) over the entire period
 
-The greatest decrease in profits (date and amount) over the entire period
+* The greatest decrease in profits (date and amount) over the entire period
 
 ## Other Considerations:
-you will be given a financial dataset called budget_data.csv. The dataset is composed of two columns: "Date" and "Profit/Losses".
+We are provided with a financial dataset called budget_data.csv. The dataset is composed of two columns: "Date" and "Profit/Losses".
 
 ## Getting Started
-Create a new repository for this project called VBA-challenge. 
-Inside the new repository that you just created, add any VBA files that you use for this assignment. These will be the main scripts to run for each analysis.
+Create a new repository for this project called pythonchallenge. 
+Clone the new repository to your computer.
+
+Inside your local Git repository, create a folder for each Python assignment and name them PyBank and PyPoll.
+
+In each folder that you just created, add the following content:
+
+A new file called main.py. This will be the main script to run for each analysis.
+
+A Resources folder that contains the CSV files you used. Make sure that your script has the correct path to the CSV file.
+
+An analysis folder that contains your text file that has the results from your analysis.
+
+Push these changes to GitHub or GitLab.
 
 ## Submission
 All three of the following are uploaded to GitHub/GitLab:
