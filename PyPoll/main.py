@@ -4,17 +4,20 @@ import os
 
 # Module for reading CSV files
 import csv
+# Change directory to the directory of current python script
+os.chdir(os.path.dirname(__file__))
 
-# here's my election data - it's in a folder called resources in that lives at the same level as main.py
+# Path to collect data from the Resources folder
 election_data_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources', 'election_data.csv')
 
-totalVotes = 0 # total rows (not including the header is the total of votes)
+# Total rows (not including the header is the total of votes)
+Total_Votes = 0 
 
 # empty dictionary to catch votes should be:
 # votesPerCandidate = {
 #   "candidate_one": votes as int
 # }
-votesPerCandidate = {}
+TotalvotesPerCandidate = {}
 
 # open up election_data
 with open(election_data_csv, newline='') as csvfile:
@@ -30,43 +33,43 @@ with open(election_data_csv, newline='') as csvfile:
 
     # Read each row of data after the header
     for row in csvreader:
-        totalVotes += 1
-        if row[2] not in votesPerCandidate:
-            votesPerCandidate[row[2]] = 1
+        Total_Votes += 1
+        if row[2] not in TotalvotesPerCandidate:
+            TotalvotesPerCandidate[row[2]] = 1
         else:
-            votesPerCandidate[row[2]] += 1   
+            TotalvotesPerCandidate[row[2]] += 1   
         
         
 
 
 print("Election Results")
 print("-------------------------")
-print("Total Votes: " + str(totalVotes))
+print("Total Votes: " + str(Total_Votes))
 print("-------------------------")
 
-for candidate, votes in votesPerCandidate.items():
-    print(candidate + ": " + "{:.3%}".format(votes/totalVotes) + "   (" +  str(votes) + ")")
+for candidate, votes in TotalvotesPerCandidate.items():
+    print(candidate + ": " + "{:.3%}".format(votes/Total_Votes) + "   (" +  str(votes) + ")")
     
 print("-------------------------") 
 
-winner = max(votesPerCandidate, key=votesPerCandidate.get)
+winner = max(TotalvotesPerCandidate, key=TotalvotesPerCandidate.get)
 
 print(f"Winner: {winner}")
 
 # now write this to an output file
 
-f = open("election_results.txt", "w")
+f = open("Election_Results.txt", "w")
 f.write("Election Results")
 f.write('\n')
 f.write("-------------------------")
 f.write('\n')
-f.write("Total Votes: " + str(totalVotes))
+f.write("Total Votes: " + str(Total_Votes))
 f.write('\n')
 f.write("-------------------------")
 f.write('\n')
 
-for candidate, votes in votesPerCandidate.items():
-    f.write(candidate + ": " + "{:.3%}".format(votes/totalVotes) + "   (" +  str(votes) + ")")
+for candidate, votes in TotalvotesPerCandidate.items():
+    f.write(candidate + ": " + "{:.3%}".format(votes/Total_Votes) + "   (" +  str(votes) + ")")
     f.write('\n')
   
 f.write("-------------------------") 
