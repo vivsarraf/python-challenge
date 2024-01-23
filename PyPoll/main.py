@@ -22,8 +22,6 @@ with open(election_data_csv, newline='') as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    # print(csvreader)
-
     # Read the csv header row first
     csv_header = next(csvreader)
     # print(f"CSV Header: {csv_header}")
@@ -37,7 +35,7 @@ with open(election_data_csv, newline='') as csvfile:
             TotalvotesPerCandidate[row[2]] += 1   
                 
 # Print the output to the Terminal
-            
+
 print("Election Results")
 print("-------------------------")
 print("Total Votes: " + str(Total_Votes))
@@ -52,7 +50,7 @@ winner = max(TotalvotesPerCandidate, key=TotalvotesPerCandidate.get)
 
 print(f"Winner: {winner}")
 
-# write this results to a text file
+# write these results to a text file
 
 f = open("Election_Results.txt", "w")
 f.write("Election Results")
