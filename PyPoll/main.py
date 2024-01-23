@@ -13,11 +13,6 @@ election_data_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), 're
 # Total rows (not including the header is the total of votes)
 Total_Votes = 0 
 
-# empty dictionary to catch votes should be:
-# votesPerCandidate = {
-#   "candidate_one": votes as int
-# }
-
 # Create dictionary for Candidates Name & Vote Count
 TotalvotesPerCandidate = {}
 
