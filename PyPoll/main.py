@@ -38,17 +38,14 @@ with open(election_data_csv, newline='') as csvfile:
             TotalvotesPerCandidate[row[2]] = 1
         else:
             TotalvotesPerCandidate[row[2]] += 1   
-        
-        
-
-
+                
 print("Election Results")
 print("-------------------------")
 print("Total Votes: " + str(Total_Votes))
 print("-------------------------")
 
-for candidate, votes in TotalvotesPerCandidate.items():
-    print(candidate + ": " + "{:.3%}".format(votes/Total_Votes) + "   (" +  str(votes) + ")")
+for candidate, Votes in TotalvotesPerCandidate.items():
+    print(candidate + ": " + "{:.3%}".format(Votes/Total_Votes) + "   (" +  str(Votes) + ")")
     
 print("-------------------------") 
 
@@ -68,8 +65,8 @@ f.write('\n')
 f.write("-------------------------")
 f.write('\n')
 
-for candidate, votes in TotalvotesPerCandidate.items():
-    f.write(candidate + ": " + "{:.3%}".format(votes/Total_Votes) + "   (" +  str(votes) + ")")
+for candidate, Votes in TotalvotesPerCandidate.items():
+    f.write(candidate + ": " + "{:.3%}".format(Votes/Total_Votes) + "   (" +  str(Votes) + ")")
     f.write('\n')
   
 f.write("-------------------------") 
