@@ -1,12 +1,13 @@
-# python-challenge
+![Vote_counting](https://github.com/vivsarraf/python-challenge/assets/135401654/a58e0ed0-f667-4217-aa2f-d6aa96a701aa)[Financial_Analysis.txt](https://github.com/vivsarraf/python-challenge/files/14017830/Financial_Analysis.txt)# PyBank & PyPoll Challenge
 
-## Background
-PyBank: Creating a Python script to analyze the financial records of a company
+# Background
+In this assignment, we will create Python scripts to analyze the financial records of a company and also analyze the election results of a small, rural town to modernize its vote-counting process.
 
+## PyBank
 ![revenue-per-lead](https://github.com/vivsarraf/python-challenge/assets/135401654/91614b37-8881-4072-a673-c8cca436ceec)
 
 ## Instructions
-Create a python script to create a Python script that analyzes the records to calculate each of the following values:
+Create a Python script that analyzes the records to calculate each of the following values:
 
  * The total number of months included in the dataset
 
@@ -17,15 +18,36 @@ Create a python script to create a Python script that analyzes the records to ca
  * The greatest increase in profits (date and amount) over the entire period
 
  * The greatest decrease in profits (date and amount) over the entire period
-Your analysis should align with the following results:
 
-Financial Analysis
-----------------------------
-Total Months: 86
-Total: $22564198
-Average Change: $-8311.11
-Greatest Increase in Profits: Aug-16 ($1862002)
-Greatest Decrease in Profits: Feb-14 ($-1825558)
+![fFnancial Analysis](https://github.com/vivsarraf/python-challenge/assets/135401654/7635cfa5-b9bc-443f-b68b-52012a88190a)
+
+In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+
+## PyPoll
+
+![Vote_counting](https://github.com/vivsarraf/python-challenge/assets/135401654/6df84ab4-9c78-44bc-8899-d6d9815e963d)
+
+Create a Python script that analyzes the votes and calculates each of the following values:
+
+ * The total number of votes cast
+
+ * A complete list of candidates who received votes
+
+ * The percentage of votes each candidate won
+
+ * The total number of votes each candidate won
+
+ * The winner of the election based on the popular vote
+
+![ELECTION_DATA](https://github.com/vivsarraf/python-challenge/assets/135401654/0cba6ad1-97d8-4fca-8fa2-a92053c46806)
+
+In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+
+
+
+
+
+
 
 PyPoll: Creating a Python script to analyze the election results of a small, rural town to modernize its vote-counting process.
 
