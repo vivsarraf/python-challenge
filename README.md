@@ -38,7 +38,7 @@ Create a Python script that analyzes the votes and calculates each of the follow
 
  * The winner of the election based on the popular vote
 
-![ELECTION_DATA](https://github.com/vivsarraf/python-challenge/assets/135401654/0cba6ad1-97d8-4fca-8fa2-a92053c46806)
+![election](https://github.com/vivsarraf/python-challenge/assets/135401654/52efb0c2-29d7-4644-875e-ee3014acd6c4)
 
 In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
