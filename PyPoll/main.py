@@ -17,9 +17,11 @@ Total_Votes = 0
 # votesPerCandidate = {
 #   "candidate_one": votes as int
 # }
+
+# Create dictionary for Candidates Name & Vote Count
 TotalvotesPerCandidate = {}
 
-# open up election_data
+# open up election_data csv
 with open(election_data_csv, newline='') as csvfile:
 
     # CSV reader specifies delimiter and variable that holds contents
@@ -27,11 +29,11 @@ with open(election_data_csv, newline='') as csvfile:
 
     # print(csvreader)
 
-    # Read the header row first
+    # Read the csv header row first
     csv_header = next(csvreader)
     # print(f"CSV Header: {csv_header}")
 
-    # Read each row of data after the header
+    # Read each row of csv data after the header
     for row in csvreader:
         Total_Votes += 1
         if row[2] not in TotalvotesPerCandidate:
@@ -39,6 +41,8 @@ with open(election_data_csv, newline='') as csvfile:
         else:
             TotalvotesPerCandidate[row[2]] += 1   
                 
+# Print the output to the Terminal
+            
 print("Election Results")
 print("-------------------------")
 print("Total Votes: " + str(Total_Votes))
@@ -53,7 +57,7 @@ winner = max(TotalvotesPerCandidate, key=TotalvotesPerCandidate.get)
 
 print(f"Winner: {winner}")
 
-# now write this to an output file
+# write this results to a text file
 
 f = open("Election_Results.txt", "w")
 f.write("Election Results")
