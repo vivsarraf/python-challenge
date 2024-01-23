@@ -3,6 +3,8 @@
 ## Background
 In this Challenge, we will use a Python script to analyze the financial records of a company. 
 
+https://github.com/vivsarraf/python-challenge/blob/main/Images/revenue-per-lead.png
+
 ## Instructions
 Create a python script to create a Python script that analyzes the records to calculate each of the following values:
 
